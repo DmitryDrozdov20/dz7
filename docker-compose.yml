@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  package:
+    build:
+      context: ./package
+      dockerfile: Dockerfile
+    volumes: 
+      - type: volume
+        source: appdata
+        target: /appdata
+    command: cp /home/new/boxfuse-sample-java-war-hello/target/hello-1.0.war /appdata
+  prod:
+    build:
+      context: ./prod
+      dockerfile: Dockerfile
+    depends_on:
+      - package
+    ports:
+      - "8080:8080"
+    volumes:
+      - appdata:/usr/local/tomcat/webapps/
+volumes:
+  appdata:
+
+ 

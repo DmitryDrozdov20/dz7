@@ -13,8 +13,6 @@ services:
     build:
       context: ./prod
       dockerfile: Dockerfile
-    depends_on:
-      - package
     ports:
       - "8080:8080"
     volumes:

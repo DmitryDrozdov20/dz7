@@ -8,7 +8,7 @@ services:
       - type: volume
         source: appdata
         target: /appdata
-    command: cp /home/new/boxfuse-sample-java-war-hello/target/hello-1.0.war /appdata
+    command: cp /home/boxfuse-sample-java-war-hello/target/hello-1.0.war /appdata
   prod:
     build:
       context: ./prod

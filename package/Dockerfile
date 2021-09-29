@@ -4,7 +4,7 @@ RUN apk update --no-cache \
 && apk add maven \
 && apk add git \
 && RUN rm -rf /var/cache/apk/*
-WORKDIR /home
+WORKDIR /home/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN mvn -f ./boxfuse-sample-java-war-hello/pom.xml package
 #RUN cp ./boxfuse-sample-java-war-hello/target/hello-1.0.war /usr/local/tomcat/webapps/
